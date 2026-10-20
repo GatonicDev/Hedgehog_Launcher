@@ -1,0 +1,47 @@
+{
+  "profiles": {
+    "Sonic 1": {
+      "game_dir": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\Game Data\\Sonic 1",
+      "engine_exe": "C:\\Users\\scino\\OneDrive\\Desktop\\SonicJuegos\\RSDKv4.exe",
+      "cover": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\sonic-japan-cover.png",
+      "mod_covers": {},
+      "asset_data_dir": ""
+    },
+    "Sonic 2": {
+      "game_dir": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\Game Data\\Sonic 2",
+      "engine_exe": "C:\\Users\\scino\\OneDrive\\Desktop\\SonicJuegos\\RSDKv4.exe",
+      "cover": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\sonic-2-japan-cover.png",
+      "mod_covers": {}
+    },
+    "Sonic 3": {
+      "game_dir": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\Game Data\\Sonic 3",
+      "engine_exe": "",
+      "cover": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\sonic-japan-cover.png",
+      "mod_covers": {}
+    },
+    "Sonic CD": {
+      "game_dir": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\Game Data\\Sonic CD",
+      "engine_exe": "",
+      "cover": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\sonic-japan-cover.png",
+      "mod_covers": {}
+    },
+    "Sonic Mania": {
+      "game_dir": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\Game Data\\Sonic Mania",
+      "engine_exe": "",
+      "cover": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\sonic-mania-cover.png",
+      "mod_covers": {},
+      "asset_data_dir": ""
+    }
+  },
+  "active_profile": "Sonic 1",
+  "settings": {
+    "background": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\sonic-adventure2-background.png",
+    "font": "Segoe UI",
+    "refresh_hz": 120,
+    "libresprite_exe": ""
+  },
+  "game_dir": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\Game Data\\Sonic 1",
+  "engine_exe": "C:\\Users\\scino\\OneDrive\\Desktop\\SonicJuegos\\RSDKv4.exe",
+  "cover": "C:\\Users\\scino\\Documents\\Codex\\2026-10-18\\qui\\outputs\\sonic-japan-cover.png",
+  "mod_covers": {}
+}

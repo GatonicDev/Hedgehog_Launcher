@@ -1,0 +1,110 @@
+HEDGEHOD LAUNCHER — NOTAS DE INVESTIGACIÓN SOBRE DATA.RSDK
+Fecha: 18 de octubre de 2026
+
+ARCHIVO INSPECCIONADO
+Ruta aportada: C:\Users\scino\OneDrive\Desktop\SonicJuegos\Data.rsdk
+Tamaño: 39,676,948 bytes
+Cabecera: RSDKvB
+SHA-256: 59760E72C1C75CBE916C988E391A752AB887D4BD3098F95B0E0151E777898BA4
+
+QUÉ SE PUEDE CONCLUIR
+La cabecera RSDKvB identifica una familia/formato de datapack RSDK; por sí sola no
+demuestra el juego, versión, región ni integridad exacta del archivo. La carpeta
+aportada contiene además RSDKv4.exe, settings.ini, SData.bin y UData.bin, y la
+configuración apunta a un motor RSDKv4. Esto hace plausible que sea un datapack de
+Sonic 1 móvil/RSDKv4, pero no sustituye verificarlo con el listado de archivos
+correcto y una herramienta compatible. No se extrajeron ni copiaron recursos del
+datapack.
+
+INSPECCIÓN DE RECURSOS
+La guía oficial de RetroED indica usar RSDKv4FileList.txt para datapacks de Sonic
+1 y Sonic 2 móviles. Al abrir el datapack local con RetroED y ese listado se puede
+generar un índice legible de recursos. Los recursos suelen incluir scripts,
+configuración de etapas, escenas, objetos, animaciones, paletas, sonidos y música.
+Los nombres y rutas exactos de este archivo aún no se verificaron; no inventar rutas
+como si ya se hubiera inspeccionado. Una vez que el dueño genere un listado, el
+launcher podría presentar accesos a esos archivos para guiar la creación de mods,
+sin distribuir los recursos originales.
+
+INICIO DEL JUEGO Y GREEN HILL ACT 1
+El settings.ini existente tiene StartingCategory=255, StartingScene=255,
+StartingPlayer=255 y SkipStartMenu=false: es la configuración normal para que el
+juego muestre su flujo de presentación/menú. La documentación oficial explica que
+SkipStartMenu=true carga la primera escena de la lista Presentation; no garantiza
+que se muestre la intro y después Green Hill Act 1. StartingCategory/Scene/Player
+pueden forzar una escena, pero no se deben adivinar sus IDs ni habilitar un salto
+que omita la presentación. Para la secuencia automática “intro y luego GHZ Act 1”
+hay que identificar las escenas con RetroED y cambiar de forma compatible la
+configuración o scripts del juego/mod. El launcher conserva la configuración
+actual y solo inicia el motor; todavía no configura esa secuencia automática.
+
+MODS Y PORTADAS
+RSDKv4 Decompilation tiene cargador de mods y metadatos mod.ini. Una portada del
+launcher es metadato visual externo al datapack; puede asociarse a un perfil o a un
+mod sin alterar sus recursos. La interfaz Python permite elegir una portada propia
+para el perfil. La asociación automática a cada mod detectado y el cambio de juego
+en runtime todavía no están implementados.
+
+RECURSOS VISUALES DEL LANZADOR
+El fondo predeterminado usa el arte aportado de Sonic Adventure 2. Al pasar el
+cursor sobre la portada, el fondo cambia temporalmente a esa imagen y vuelve al
+fondo predeterminado al retirar el cursor. La marca muestra HG en tonos de azul y
+el símbolo de Sonic que aportó el usuario. Estos gráficos se mantienen en outputs
+y no se insertan en Data.rsdk.
+
+FUENTES PRIMARIAS
+RSDKv4 settings.ini: https://rsdkmodding.com/RSDKv4/Decompilation/SettingsINI/
+Guía de extracción RetroED: https://rsdkmodding.com/Guides/RetroED/ExtractDatapack/
+RSDKv4 Decompilation y cargador: https://github.com/RSDKModding/RSDKv4-Decompilation
+Wiki del cargador de mods: https://rsdkmodding.com/RSDKv4/Decompilation/ModLoader/
+
+No se extrajeron recursos de los datapacks. Para documentar assets exactos falta
+generar un índice local con RetroED y la lista oficial correcta; la documentación
+del motor no permite inferir los nombres de cada archivo interno.
+
+PERFIL SONIC 2 AÑADIDO
+La interfaz ahora ofrece perfiles independientes para Sonic 1, Sonic 2, Sonic 3,
+Sonic CD y Sonic Mania; cada uno guarda carpeta, ejecutable y portadas/mods por
+separado. Sonic 2 usa la carátula japonesa aportada. La documentación oficial confirma que RSDKv4 Decompilation
+puede ejecutarse con datapacks de Sonic 1 o Sonic 2 y que RetroED usa la misma
+RSDKv4FileList.txt para Sonic 1/2 móviles. El usuario aportó
+`C:\Users\scino\Downloads\Data.rsdk`, que se copió sin modificar a
+`outputs/Game Data/Sonic 2/Data.rsdk`; el original sigue en Downloads. Tiene
+47,845,945 bytes, cabecera `RSDKvB` y SHA-256
+`7476A3287A98344BF867F98632874D7CF6010057D2E5B18685E0704090241CE5`. El usuario
+lo identifica como el de Sonic 2, pero la cabecera no confirma por sí sola juego,
+región o versión. No se extrajeron sus assets y aún no se han identificado sus
+escenas. No se inventan IDs de niveles ni se cambia su settings.ini. Las carpetas
+de Sonic 3, Sonic CD y Sonic Mania se crean vacías de datapacks, pues aún no se
+aportaron esos archivos. El instalador integrado solo instala RSDKv4 para Sonic 1
+y 2; Sonic CD requiere RSDKv3, Sonic Mania RSDKv5, y Sonic 3 necesita el motor
+compatible con el datapack concreto.
+
+SONIC MANIA AÑADIDO
+El perfil Sonic Mania ya tiene su portada aportada y una carpeta separada en
+`Game Data/Sonic Mania/`. Se copió `C:\Users\scino\Downloads\Data(1).rsdk` a
+`Game Data/Sonic Mania/Data.rsdk`; el archivo original no se modificó. La copia mide
+208,400,940 bytes, comienza con la firma `RSDKv5c` (más un byte de versión interno)
+y su SHA-256 es `77A904387581978222A78D2B7D6CD5944F9537CD72DB0D6588577E99B683090C`.
+La firma identifica la familia/formato RSDKv5c; no valida por sí sola la build,
+procedencia, integridad, ni compatibilidad con un motor particular.
+
+Para ejecutar la decompilación de Mania, la guía oficial indica que se requiere el
+Data.rsdk correspondiente y Game.dll junto al ejecutable compatible. Game.dll y el
+motor aún no están configurados en este perfil, así que el launcher ya puede mostrar
+Mania, su carátula, su carpeta y su configuración, pero la ejecución real queda
+pendiente de que se seleccione un RSDKv5 compatible y se coloque su Game.dll legal.
+El launcher advierte si falta Game.dll y permite decidir si intentar de todos modos.
+No se extrajeron recursos ni se empaquetó el datapack dentro del ejecutable.
+
+Se añadió `GUIA-CREACION-MODS-SONIC-MANIA.md` y una carpeta vacía de inicio
+`Plantilla-Mod-Sonic-Mania/` con `mod.ini`. La guía explica estructura de mods,
+rutas Data/, activación, portadas, TargetVersion, compatibilidad y publicación sin
+redistribuir archivos comerciales. La configuración del perfil PC no significa que
+la versión Android esté implementada.
+
+Fuentes Mania (documentación oficial de RSDK Modding Wiki):
+- https://rsdkmodding.com/Guides/RSDKv5/Decompilation/Setup/
+- https://rsdkmodding.com/Guides/RSDKv5/Decompilation/ModSetup/
+- https://rsdkmodding.com/RSDKv5/Decompilation/ModLoader/
+- https://rsdkmodding.com/Guides/RetroED/ExtractDatapack/

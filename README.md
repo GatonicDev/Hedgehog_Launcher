@@ -1,10 +1,10 @@
 # Hedgehod Launcher
 
-Launcher comunitario para organizar instalaciones locales de juegos Sonic basados en Retro Engine y preparar proyectos de mods. El programa no distribuye juegos, `Data.rsdk`, ejecutables ni recursos extraídos.
+Launcher comunitario para organizar instalaciones locales de juegos Sonic basados en Retro Engine y la creacion de mods hechos por la comuniad. El programa no distribuye juegos, `Data.rsdk`, ejecutables ni recursos extraídos.
 
 ## Estado
 
-Versión de escritorio para Windows en desarrollo. Incluye biblioteca de perfiles, editor de sprites, selección de fotogramas clave y exportación de recursos/declaraciones para proyectos de mod. La integración con el formato de animación `.ani` de RSDKv4 todavía requiere trabajo adicional.
+Versión de escritorio para Windows en desarrollo. Incluye biblioteca de perfiles, herramientas para la creacion de mods, editor de sprites, previsualizador de sprites. La integración con el formato de animación `.ani` de RSDKv4 todavía requiere trabajo adicional.
 
 ## Ejecutar desde el código
 
@@ -26,3 +26,4 @@ Consulta `GUIA-WORKSPACE-SONIC-1.md`, `GUIA-CREACION-MODS-SONIC-MANIA.md` e `INT
 ## Licencia
 
 El código de Hedgehod Launcher se distribuye bajo la licencia MIT. Consulta el archivo `LICENSE`. Las marcas, personajes, juegos, música y otros recursos de terceros mencionados no forman parte de esta licencia.
+
